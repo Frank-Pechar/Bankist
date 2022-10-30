@@ -67,6 +67,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Date formater
 const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
@@ -79,6 +80,7 @@ const formatMovementDate = function (date, locale) {
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
+// Format currency value and type
 const formatCur = function (value, locale, currency) {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
@@ -86,6 +88,7 @@ const formatCur = function (value, locale, currency) {
   }).format(value);
 };
 
+// Display transaction data
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -115,11 +118,13 @@ const displayMovements = function (acc, sort = false) {
   });
 };
 
+// Calc and Display Balance
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = formatCur(acc.balance, acc.locale, acc.currency);
 };
 
+// Calc and Display Summary Data
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
@@ -141,6 +146,7 @@ const calcDisplaySummary = function (acc) {
   labelSumInterest.textContent = formatCur(interest, acc.locale, acc.currency);
 };
 
+// Create Username with Name Initials
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -152,6 +158,7 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 
+// Update and Display All Account Data
 const updateUI = function (acc) {
   displayMovements(acc);
 
@@ -160,6 +167,7 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+// 3 Minute Logout Timer
 const startLogOutTimer = function () {
   const tick = function () {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
@@ -176,7 +184,7 @@ const startLogOutTimer = function () {
     time--;
   };
 
-  let time = 120;
+  let time = 180;
 
   tick();
   const timer = setInterval(tick, 1000);
@@ -184,6 +192,7 @@ const startLogOutTimer = function () {
   return timer;
 };
 
+// Login
 let currentAccount, timer;
 
 btnLogin.addEventListener('click', function (e) {
@@ -223,6 +232,7 @@ btnLogin.addEventListener('click', function (e) {
   }
 });
 
+// Transfer to Another Account
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = +inputTransferAmount.value;
@@ -250,6 +260,7 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+// Loan Request
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -270,6 +281,7 @@ btnLoan.addEventListener('click', function (e) {
   inputLoanAmount.value = '';
 });
 
+// Close Account
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -282,13 +294,14 @@ btnClose.addEventListener('click', function (e) {
     );
 
     accounts.splice(index, 1);
-
+    labelWelcome.textContent = 'Log in to get started';
     containerApp.style.opacity = 0;
   }
 
   inputCloseUsername.value = inputClosePin.value = '';
 });
 
+// Sort Transactions by Amount or  Date (Default)
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
