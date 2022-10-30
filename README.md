@@ -1,5 +1,7 @@
 # Bankist - Banking Application - JavaScript Course Project
 
+App can be run from: https://frank-pechar-bankist.netlify.app/
+
 JavaScript Course Coding Project by Jonas Schmedtmann I Completed. Coded JavaScript for this Banking Application through the course.
 
 APP USE -
