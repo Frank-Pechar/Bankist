@@ -16,9 +16,11 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 - Used Date() constructor 
 - Intl.DateTimeFormat(locale).format() - formatting for locale and also date calculations
 - used Intl.NumberFormat().format() for currency formatting for locale and type
-- forEach(), map(), find() filter(), reduce(), sort(), reduce(), slice(), split(), join(), toLowerCase()
-- Math.round(), Math.abs()
-- setInterval(), setTimeout()
+- forEach(), map(), find(), findIndex(), filter(), reduce(), sort(), slice(), split(), join(), toLowerCase()
+- Math.round(), Math.abs(), Math.trunc()
+- setInterval(), setTimeout(), clearInterval()
+- String(), padStart()
+- blur()
 
 ## User Functionality
 
