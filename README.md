@@ -10,13 +10,14 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
 - extensive use of a wide variety of Array methods
 - extensive use of method chaining 
+- sort and unsort functionality 
 
 ## Coding Methods and Features Used:
 
 - Used Date() constructor 
 - Intl.DateTimeFormat(locale).format() - formatting for locale and also date calculations
 - used Intl.NumberFormat().format() for currency formatting for locale and type
-- forEach(), map(), find(), findIndex(), filter(), reduce(), sort(), slice(), split(), join(), toLowerCase()
+- forEach(), map(), find(), findIndex(), filter(), reduce(), sort(), splice(), slice(), split(), join(), toLowerCase()
 - Math.round(), Math.abs(), Math.trunc()
 - setInterval(), setTimeout(), clearInterval()
 - String(), padStart()
