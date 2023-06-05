@@ -14,7 +14,7 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
 ## Coding Methods and Features Used:
 
-- Used Date() constructor 
+- Used Date() constructor Date().toISOString()
 - Intl.DateTimeFormat(locale).format() - formatting for locale and also date calculations
 - used Intl.NumberFormat().format() for currency formatting for locale and type
 - forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), toLowerCase(), push()
