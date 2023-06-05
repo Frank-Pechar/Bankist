@@ -8,13 +8,14 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
 ## This App Uses Javascript Features Such As:
 
+- extensive use of a wide variety of Array methods
 - extensive use of method chaining 
 
 ## Coding Methods and Features Used:
 
 - Intl.DateTimeFormat(locale).format() - formatting for locale and also date calculations
 - used Intl.NumberFormat().format() for currency formatting for locale and type
-- map(), filter(), reduce(), sort(), reduce(), slice(), split(), join(), toLowerCase()
+- forEach(), map(), find() filter(), reduce(), sort(), reduce(), slice(), split(), join(), toLowerCase()
 - Math.round(), Math.abs()
 
 ## User Functionality
