@@ -1,4 +1,4 @@
-# Bankist Pjroject - Banking Application 
+# Bankist Project - Banking Application 
 # JavaScript Project
 ## Desription of App Functionality, Features, and Methods
 
