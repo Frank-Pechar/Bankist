@@ -14,14 +14,13 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
 ## Coding Methods and Features Used:
 
-- Used Date() constructor Date().toISOString()
-- Intl.DateTimeFormat(locale).format() - formatting for locale and also date calculations
-- used Intl.NumberFormat().format() for currency formatting for locale and type
-- forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), toLowerCase(), push()
-- Math.round(), Math.abs(), Math.trunc(), Math.floor()
-- setInterval(), setTimeout(), clearInterval()
-- String(), padStart()
-- blur()
+- Used Date() constructor and Date().toISOString() method
+- Intl.DateTimeFormat(locale).format() to format for locale and also date calculations
+- Intl.NumberFormat().format() for currency formatting for locale and type
+- Array methods used: forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), push()
+- Math methods used: Math.round(), Math.abs(), Math.trunc(), Math.floor()
+- Timer methods used: setInterval(), setTimeout(), clearInterval()
+- Also used: String(), padStart(), toLowerCase(), blur()
 
 ## User Functionality
 
