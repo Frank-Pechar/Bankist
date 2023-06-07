@@ -20,4 +20,4 @@ App can be run from: https://frank-pechar-js-bankist.netlify.app/
 - Array methods used: forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), push()
 - Math methods used: Math.round(), Math.abs(), Math.trunc(), Math.floor()
 - Timer methods used: setInterval(), setTimeout(), clearInterval()
-- Also used: String(), padStart(), toLowerCase(), blur()
+- Also used: String(), padStart(), toLowerCase(), blur() methods
