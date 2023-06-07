@@ -2,7 +2,7 @@
 # JavaScript Project
 ## Desription of App Functionality, Features, and Methods
 
-Javascript coding project I completed the Udemy - The Complete Javascript Course 2023: From Zero to Expert by Jonas Schmedtmann. After coding this banking application through the course I then added additional modifications to logic and added extensive commenting of code for educational purposes. I also added responsive layout CSS code for mobile devices (course project only provided for a desktop display). 
+Javascript coding project I completed the Udemy - The Complete Javascript Course 2023: From Zero to Expert by Jonas Schmedtmann. After coding this banking application through the course I then added additional modifications to logic including a fix to a bug in the original project (project did not include sorting date array along with amounts array). Also added extensive commenting of code for educational purposes. I also added responsive layout CSS code for mobile devices (course project only provided for a desktop display). 
 
 App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
