@@ -1,8 +1,4 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
+/* Media Query is at the end */
 
 * {
   margin: 0;
@@ -12,6 +8,8 @@
 
 html {
   font-size: 62.5%;
+  font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+
   box-sizing: border-box;
 }
 
@@ -27,25 +25,38 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  height: 12vh;
 }
 
-.welcome {
-  font-size: 1.9rem;
+.welcome-and-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.7rem;
+  width: 60vw;
+}
+
+.welcome,
+.welcome-bankname {
   font-weight: 500;
 }
 
+.welcome-bankname {
+  margin-left: -3rem;
+}
+
 .logo {
-  height: 5.25rem;
+  height: 4rem;
 }
 
 .login {
   display: flex;
+  width: 40vw;
 }
 
 .login__input {
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.4rem 2rem;
   font-size: 1.6rem;
   font-family: inherit;
   text-align: center;
@@ -85,15 +96,16 @@ nav {
 
 /* MAIN */
 .app {
+  height: 88vh;
   position: relative;
   max-width: 100rem;
-  margin: 4rem auto;
+  margin: 4rem 2rem;
   display: grid;
   grid-template-columns: 4fr 3fr;
-  grid-template-rows: auto repeat(3, 15rem) auto;
+  grid-template-rows: auto auto repeat(3, 15rem);
   gap: 2rem;
 
-  /* NOTE This creates the fade in/out anumation */
+  /* NOTE This creates the fade in/out animation */
   opacity: 0;
   transition: all 1s;
 }
@@ -101,15 +113,13 @@ nav {
 .balance {
   grid-column: 1 / span 2;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
 }
 
 .balance__label {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
-  margin-bottom: -0.2rem;
 }
 
 .balance__date {
@@ -118,21 +128,22 @@ nav {
 }
 
 .balance__value {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   font-weight: 400;
 }
 
 /* MOVEMENTS */
 .movements {
-  grid-row: 2 / span 3;
+  grid-row: 3 / span 3;
   background-color: #fff;
   border-radius: 1rem;
   overflow: scroll;
 }
 
 .movements__row {
-  padding: 2.25rem 4rem;
+  padding: 2.25rem 2rem;
   display: flex;
+  justify-content: start;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
@@ -144,10 +155,10 @@ nav {
   color: #fff;
   padding: 0.1rem 1rem;
   border-radius: 10rem;
-  margin-right: 2rem;
 }
 
 .movements__date {
+  margin-left: 1rem;
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -163,17 +174,16 @@ nav {
 }
 
 .movements__value {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   margin-left: auto;
+  margin-right: 1rem;
 }
 
-/* SUMMARY */
 .summary {
-  grid-row: 5 / 6;
+  grid-row: 2;
+  grid-column: 1 / -1;
   display: flex;
   align-items: baseline;
-  padding: 0 0.3rem;
-  margin-top: 1rem;
 }
 
 .summary__label {
@@ -185,7 +195,9 @@ nav {
 
 .summary__value {
   font-size: 2.2rem;
-  margin-right: 2.5rem;
+  &:not(:last-of-type) {
+    margin-right: 2.5rem;
+  }
 }
 
 .summary__value--in,
@@ -239,14 +251,12 @@ h2 {
   gap: 0.4rem 1rem;
 }
 
-/* Exceptions for interst */
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
 }
 .form__label--loan {
   grid-row: 2;
 }
-/* End exceptions */
 
 .form__input {
   width: 100%;
@@ -286,12 +296,103 @@ h2 {
 }
 
 .logout-timer {
-  padding: 0 0.3rem;
-  margin-top: 1.9rem;
+  grid-column: 1 / -1;
+  margin: 0 2rem 1.5rem;
   text-align: right;
   font-size: 1.25rem;
 }
 
 .timer {
   font-weight: 600;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 550px) {
+  nav {
+    display: block;
+  }
+
+  .welcome,
+  .welcome-bankname {
+    font-size: 1.5rem;
+    margin: 0 2rem;
+  }
+
+  .welcome-and-logo {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    height: 3.2rem;
+    margin-left: auto;
+  }
+
+  .login__input {
+    font-size: 1rem;
+  }
+
+  .app {
+    grid-template-rows: auto auto repeat(2, 15rem) repeat(4, auto);
+    margin: 2rem 0;
+  }
+
+  .balance__label {
+    font-size: 1.2rem;
+  }
+
+  .balance__date {
+    font-size: 1rem;
+  }
+
+  .balance__value {
+    font-size: 1.4rem;
+  }
+
+  .summary__value {
+    font-size: 1.2rem;
+  }
+
+  .movements {
+    grid-row: 3 / 5;
+    grid-column: 1 / -1;
+  }
+
+  .movements__row {
+    padding: 1rem 1rem;
+  }
+
+  .operation {
+    padding: 1rem 1.5rem;
+  }
+
+  .operation--transfer {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+  }
+
+  .operation--loan {
+    grid-column: 1 / -1;
+    grid-row: 6 / 7;
+  }
+  .operation--close {
+    grid-column: 1 / -1;
+    grid-row: 7 / 8;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .form__label {
+    font-size: 1.2rem;
+  }
+
+  .logout-timer {
+    grid-column: 1 / -1;
+    grid-row: 8 / 9;
+  }
 }
