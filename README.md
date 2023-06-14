@@ -6,18 +6,37 @@ Javascript coding project I completed from Udemy - The Complete Javascript Cours
 
 App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
-## This App Uses Javascript Features Such As:
+## App Functionality
 
-- extensive use of a wide variety of Array methods
-- extensive use of method chaining 
-- sort and unsort functionality 
+Display Account Information
+- Page loads with a default account
+- Default account is user=fp, PIN=2222
+- Can display another account for user=js, PIN=1111
+- NOTE: MUST USE LOWERCASE LETTERS FOR USERID
 
-## Coding Methods and Features Used:
+Transfer Funds to Another Account
+- Enter userid for transfer to account, and the amount
 
-- Used Date() constructor and Date().toISOString() method
+Request a Loan
+- Enter amount requested (must have a deposit for at least 10% of the loan amount)
+
+Close Account
+- Enter userid and PIN
+
+Sort deposits by amount
+- Click the &lt;SORT&gt; Button
+
+## Javascript Features and Methods Used
+
+- Extensive use of a wide variety of Array methods
+- Extensive use of method chaining 
+- Sort and unsort functionality 
+
+List of some methods and properties used: 
+- Array methods used: forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), push()
+- Date() constructor and Date().toISOString() method
 - Intl.DateTimeFormat(locale).format() to format for locale and also date calculations
 - Intl.NumberFormat().format() for currency formatting for locale and type
-- Array methods used: forEach(), map(), find(), findIndex(), filter(), reduce(), some(), sort(), splice(), slice(), split(), join(), push()
-- Math methods used: Math.round(), Math.abs(), Math.trunc(), Math.floor()
+- Math.round(), Math.abs(), Math.trunc(), Math.floor()
 - Timer methods used: setInterval(), setTimeout(), clearInterval()
 - Also used: String(), padStart(), toLowerCase(), blur() methods
