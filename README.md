@@ -1,6 +1,6 @@
-# Bankist Project - Banking Application 
-# JavaScript Project
-## Desription of App Functionality, Features, and Methods
+# Banking App 
+## JavaScript Project
+## Description of App Functionality, Features, and Methods
 
 Javascript coding project I completed from Udemy - The Complete Javascript Course 2023: From Zero to Expert by Jonas Schmedtmann. After coding this project through the course I then added additional modifications to logic including a fix to a bug in the original project (project did not include sorting date array along with amounts array). Added extensive commenting of code for educational purposes. I also added responsive layout CSS code for mobile devices (course project only provided for a desktop display). 
 
