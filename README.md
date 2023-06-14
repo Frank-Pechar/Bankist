@@ -6,6 +6,10 @@ Javascript coding project I completed from Udemy - The Complete Javascript Cours
 
 App can be run from: https://frank-pechar-js-bankist.netlify.app/
 
+## App Description
+
+This App tracks and summarizes deposits and withdrawals using built in deposit and withdrawal transaction test data. Transferring funds and receiving loans will automatically update: Deposit and withdrawal transaction detail data Account balance, total deposits, total withdrawals and total interest. Transferring funds will cause a withdrawal from account and a deposit to the receiving account. Application also features the ability to close the account, sorting transaction data by deposit amounts, and a logout timer
+
 ## App Functionality
 
 Display Account Information
