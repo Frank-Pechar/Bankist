@@ -195,9 +195,10 @@ nav {
 
 .summary__value {
   font-size: 2.2rem;
-  &:not(:last-of-type) {
-    margin-right: 2.5rem;
-  }
+}
+
+.summary__value:not(:last-of-type) {
+  margin-right: 2.5rem;
 }
 
 .summary__value--in,
