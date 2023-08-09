@@ -422,8 +422,8 @@ h2 {
 .form {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2.5fr 1rem 4fr 1rem 1fr;
-  grid-template-columns: 2.5fr 4fr 1fr;
+  -ms-grid-columns: 3.5fr 1rem 3.5fr 1rem 1fr;
+  grid-template-columns: 3.5fr 3.5fr 1fr;
   -ms-grid-rows: auto 0.4rem auto;
   grid-template-rows: auto auto;
   gap: 0.4rem 1rem;
@@ -469,8 +469,8 @@ h2 {
 }
 
 form.form--close {
-  -ms-grid-columns: 5fr 3fr 1.5fr;
-  grid-template-columns: 5fr 3fr 1.5fr;
+  -ms-grid-columns: 5fr 3.5fr 1.5fr;
+  grid-template-columns: 5fr 3.5fr 1.5fr;
 }
 
 .form__input {
@@ -527,7 +527,7 @@ form.form--close {
 
 footer {
   font-size: 1.4rem;
-  margin: 0 1rem 1.5rem;
+  margin: 0 1rem 3rem;
 }
 /* Media Query */
 
