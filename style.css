@@ -1,14 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 version
+*/
+
 /* Media Query is at the end */
 
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%;
   font-size: clamp(0.5rem, 1.5vw, 1rem);
+
+  -webkit-box-sizing: border-box;
 
   box-sizing: border-box;
 }
@@ -22,16 +32,29 @@ body {
 }
 
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 1.5rem;
 }
 
 .welcome-and-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
@@ -56,6 +79,8 @@ nav {
 }
 
 .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
@@ -71,6 +96,8 @@ nav {
   margin-right: 1rem;
   color: inherit;
   border: 1px solid #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -83,6 +110,22 @@ nav {
   border: 1px solid #ccc;
 }
 
+.login__input::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+.login__input::-moz-placeholder {
+  color: #bbb;
+}
+
+.login__input:-ms-input-placeholder {
+  color: #bbb;
+}
+
+.login__input::-ms-input-placeholder {
+  color: #bbb;
+}
+
 .login__input::placeholder {
   color: #bbb;
 }
@@ -93,6 +136,8 @@ nav {
   font-size: 2.2rem;
   color: inherit;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -109,20 +154,73 @@ nav {
   position: relative;
   max-width: 100rem;
   margin: 4rem 2rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 4fr 2rem 3fr;
   grid-template-columns: 4fr 3fr;
+  -ms-grid-rows: auto 2rem auto 2rem 15rem 2rem 15rem 2rem 15rem;
   grid-template-rows: auto auto repeat(3, 15rem);
   gap: 2rem;
 
   /* NOTE This creates the fade in/out animation */
   opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
+}
+.app > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.app > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.app > *:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.app > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.app > *:nth-child(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+.app > *:nth-child(6) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+.app > *:nth-child(7) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+}
+.app > *:nth-child(8) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+}
+.app > *:nth-child(9) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+}
+.app > *:nth-child(10) {
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
 }
 
 .balance {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -143,6 +241,8 @@ nav {
 
 /* MOVEMENTS */
 .movements {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
   grid-row: 3 / span 3;
   background-color: #fff;
   border-radius: 1rem;
@@ -151,8 +251,14 @@ nav {
 
 .movements__row {
   padding: 2.25rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
@@ -175,10 +281,26 @@ nav {
 }
 
 .movements__type--deposit {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#39b385),
+    to(#9be15d)
+  );
+  background-image: -o-linear-gradient(bottom right, #39b385, #9be15d);
   background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
 
 .movements__type--withdrawal {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#e52a5a),
+    to(#ff585f)
+  );
+  background-image: -o-linear-gradient(bottom right, #e52a5a, #ff585f);
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
@@ -189,17 +311,29 @@ nav {
 }
 
 .summary {
+  -ms-grid-row: 2;
   grid-row: 2;
   grid-column: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 1rem;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .summary__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .summary__group:not(:last-of-type) {
@@ -243,14 +377,38 @@ nav {
 }
 
 .operation--transfer {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#ffb003),
+    to(#ffcb03)
+  );
+  background-image: -o-linear-gradient(bottom right, #ffb003, #ffcb03);
   background-image: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
 .operation--loan {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#39b385),
+    to(#9be15d)
+  );
+  background-image: -o-linear-gradient(bottom right, #39b385, #9be15d);
   background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
 
 .operation--close {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(#e52a5a),
+    to(#ff585f)
+  );
+  background-image: -o-linear-gradient(bottom right, #e52a5a, #ff585f);
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
@@ -262,20 +420,56 @@ h2 {
 }
 
 .form {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 2.5fr 1rem 4fr 1rem 1fr;
   grid-template-columns: 2.5fr 4fr 1fr;
+  -ms-grid-rows: auto 0.4rem auto;
   grid-template-rows: auto auto;
   gap: 0.4rem 1rem;
 }
 
+.form > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.form > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.form > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+
+.form > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.form > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
+.form > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+
 .form.form--loan {
+  -ms-grid-columns: 5fr 1fr 1fr;
   grid-template-columns: 5fr 1fr 1fr;
 }
 .form__label--loan {
+  -ms-grid-row: 2;
   grid-row: 2;
 }
 
 form.form--close {
+  -ms-grid-columns: 5fr 3fr 1.5fr;
   grid-template-columns: 5fr 3fr 1.5fr;
 }
 
@@ -289,6 +483,8 @@ form.form--close {
   color: #333;
   padding: 0.7rem 1rem;
   border-radius: 0.7rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -308,6 +504,8 @@ form.form--close {
   font-size: 1.8rem;
   background-color: #fff;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -345,11 +543,14 @@ footer {
   }
 
   .app {
+    -ms-grid-rows: auto auto (15rem) [2] (auto) [4];
     grid-template-rows: auto auto repeat(2, 15rem) repeat(4, auto);
     margin: 2rem 0;
   }
 
   .movements {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
     grid-row: 3 / 5;
     grid-column: 1 / -1;
   }
@@ -368,20 +569,28 @@ footer {
 
   .operation--transfer {
     grid-column: 1 / -1;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
     grid-row: 5 / 6;
   }
 
   .operation--loan {
     grid-column: 1 / -1;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
     grid-row: 6 / 7;
   }
   .operation--close {
     grid-column: 1 / -1;
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
     grid-row: 7 / 8;
   }
 
   .logout-timer {
     grid-column: 1 / -1;
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 1;
     grid-row: 8 / 9;
   }
 }
