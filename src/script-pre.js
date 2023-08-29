@@ -68,7 +68,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const TIMEOUTSECONDS = 180;
+const TIMEOUTSECONDS = 300; // logout after 5 minutes of no activity
 
 // format date for locale and for recency
 const formatMovementDate = function (date, locale) {
@@ -152,20 +152,20 @@ const calcDisplayBalance = function (acc) {
 const calcDisplaySummary = function (acc) {
   // calculate total deposits
   const incomes = acc.movements
-    .filter(mov => mov > 0)
+    .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = formatCur(incomes, acc.locale, acc.currency);
 
   // calculate total withdrawals
   const out = acc.movements
-    .filter(mov => mov < 0)
+    .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = formatCur(Math.abs(out), acc.locale, acc.currency);
 
   // calculate total interest (interest on each deposit must be at least $1 to be included)
   const interest = acc.movements
-    .filter(mov => mov > 0)
-    .map(deposit => (deposit * acc.interestRate) / 100)
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       return int >= 1;
     })
@@ -179,7 +179,7 @@ const createUsernames = function (accs) {
     acc.username = acc.owner
       .toLowerCase()
       .split(' ')
-      .map(name => name[0])
+      .map((name) => name[0])
       .join('');
   });
 };
@@ -238,7 +238,7 @@ const processAccountHandler = function (e) {
 
   // load currentAccount with matching entry from accounts array
   currentAccount = accounts.find(
-    acc => acc.username === inputLoginUsername.value
+    (acc) => acc.username === inputLoginUsername.value
   );
 
   // if there is a currentAccount and entered pin is correct
@@ -287,7 +287,7 @@ btnTransfer.addEventListener('click', function (e) {
   const amount = +inputTransferAmount.value;
   // find account to transfer to
   const receiverAcc = accounts.find(
-    acc => acc.username === inputTransferTo.value
+    (acc) => acc.username === inputTransferTo.value
   );
   inputTransferAmount.value = inputTransferTo.value = '';
 
@@ -321,7 +321,10 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   // must have a deposit amount >= 10% of requested loan amount
-  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov >= amount * 0.1)
+  ) {
     setTimeout(function () {
       // if so - add loan amount to movements array and date to movementsDates array
       currentAccount.movements.push(amount);
@@ -349,7 +352,7 @@ btnClose.addEventListener('click', function (e) {
     +inputClosePin.value === currentAccount.pin
   ) {
     const index = accounts.findIndex(
-      acc => acc.username === currentAccount.username
+      (acc) => acc.username === currentAccount.username
     );
 
     accounts.splice(index, 1);
